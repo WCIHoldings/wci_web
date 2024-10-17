@@ -1,4 +1,4 @@
-# wci_web
+# New WCI Site
 
 A new Flutter project.
 
