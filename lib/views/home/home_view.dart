@@ -13,9 +13,16 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   _getPadding() {
     if (Responsive.isDesktop(context)) {
-      return const EdgeInsets.all(75);
+      return const EdgeInsets.all(70);
     }
     return const EdgeInsets.all(20);
+  }
+
+  _getAppBarPadding() {
+    if (Responsive.isDesktop(context)) {
+      return const EdgeInsets.all(55);
+    }
+    return const EdgeInsets.all(5);
   }
 
   @override
@@ -27,19 +34,22 @@ class _HomeViewState extends State<HomeView> {
         foregroundColor: Colors.black,
         elevation: 0,
         surfaceTintColor: Colors.black,
-        leadingWidth: 100,
-        leading: Container(
-          padding: EdgeInsets.only(left: 40),
-          child: Image.asset("assets/images/logo.jpg"),
-        ),
-        title: Text(
-          "Wrapped Carbon Initiative",
-          style: GoogleFonts.dmSans(color: Colors.white),
+        // leadingWidth: 100,
+        // leading: Container(
+        //   padding: EdgeInsets.only(left: 40),
+        //   child: Image.asset("assets/images/WCI_logo.png"),
+        // ),
+        title: Container(
+          padding: _getAppBarPadding(),
+          child: Text(
+            "Wrapped Carbon Initiative",
+            style: GoogleFonts.dmSans(color: Colors.white, fontSize: 24),
+          ),
         ),
       ),
       backgroundColor: Colors.black,
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         padding: _getPadding(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -107,17 +117,17 @@ class _HomeViewState extends State<HomeView> {
             ),
             Text("Solving Key Challenges", style: _getSubTitleTextStyle()),
             const SizedBox(
-              height: 10,
+              height: 15,
             ),
             _getBulletPoint("Real Transparency: ",
                 "No more greenwashing. Every asset we tokenize is fully traceable across its lifecycle, ensuring transparency and accountability."),
             const SizedBox(
-              height: 5,
+              height: 10,
             ),
             _getBulletPoint("New Financial Innovation: ",
                 "We’re bridging traditional finance and sustainability by introducing new green financial products that unlock growth opportunities."),
             const SizedBox(
-              height: 5,
+              height: 10,
             ),
             _getBulletPoint("Incentivizing Sustainable Supply Chains: ",
                 "Our advanced tokenomics model motivates supply chain participants to share data and operate transparently, reducing risks and increasing sustainability."),
