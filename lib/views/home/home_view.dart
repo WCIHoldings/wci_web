@@ -42,7 +42,7 @@ class _HomeViewState extends State<HomeView> {
         title: Container(
           padding: _getAppBarPadding(),
           child: Text(
-            "Wrapped Carbon Initiative",
+            "Wrapped Carbon Initiative (In Stealth Mode)",
             style: GoogleFonts.dmSans(color: Colors.white, fontSize: 24),
           ),
         ),
